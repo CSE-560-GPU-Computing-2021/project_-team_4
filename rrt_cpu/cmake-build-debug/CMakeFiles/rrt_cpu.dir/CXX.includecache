@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paras/Downloads/GPU/Project/rrt_cpu/Quadtree.cpp
+fstream
+-
+iostream
+-
+Quadtree.h
+/home/paras/Downloads/GPU/Project/rrt_cpu/Quadtree.h
+config.h
+/home/paras/Downloads/GPU/Project/rrt_cpu/config.h
+Utils.h
+/home/paras/Downloads/GPU/Project/rrt_cpu/Utils.h
+
+/home/paras/Downloads/GPU/Project/rrt_cpu/Quadtree.h
+vector
+-
+
+/home/paras/Downloads/GPU/Project/rrt_cpu/Utils.h
+tuple
+-
+vector
+-
+
+/home/paras/Downloads/GPU/Project/rrt_cpu/config.h
+tuple
+-
+
