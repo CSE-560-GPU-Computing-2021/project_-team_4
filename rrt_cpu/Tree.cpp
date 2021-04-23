@@ -27,9 +27,13 @@ Tree::Tree(Canvas *canvas_, Node start_, Node end_, float step_size_, int id_) {
 //    Node parent = nodes[random_index];
 //    return parent;
 //}
-
 bool Tree::add_node(Node parent, Node node) {
     if (QUADTREE){
+//        if (canvas->is_colliding(node) != canvas->is_colliding2(node) ){
+//            std::cout << std::get<0>(node) << " " << std::get<1>(node) << " " << canvas->is_colliding(node) << " " << canvas->is_colliding2(node) << std::endl;
+//            canvas->is_colliding(node);
+//
+//        }
         if (!canvas->is_colliding(node) && Utils::eul_dist(parent, node) > STEP_SIZE/1.1){
           nodes.push_back(node);
           parent_map[node] = parent;
@@ -37,7 +41,7 @@ bool Tree::add_node(Node parent, Node node) {
         }
     } else{
 //        if (canvas->is_colliding(node) != canvas->is_colliding2(node) ){
-//            std::cout << std::get<0>(node) << " " << std::get<1>(node) << std::endl;
+//            std::cout << std::get<0>(node) << " " << std::get<1>(node) << " " << canvas->is_colliding(node) << " " << canvas->is_colliding2(node) << std::endl;
 //            canvas->is_colliding(node);
 //        }
     if (!canvas->is_colliding2(node) && Utils::eul_dist(parent, node) > STEP_SIZE/1.1){

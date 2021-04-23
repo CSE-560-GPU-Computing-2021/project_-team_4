@@ -37,7 +37,7 @@ int build_tree(Tree *tree1){
     return -1;
 }
 
-int main() {
+int main_() {
     if(print_file){ std::ofstream myfile; myfile.open ("path_raw.txt", std::ios_base::trunc | std::ios_base::out); myfile.close();}
 
     Canvas canvas;

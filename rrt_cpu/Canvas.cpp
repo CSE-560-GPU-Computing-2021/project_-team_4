@@ -22,6 +22,9 @@ void Canvas::add_obs_from_file(std::string path_to_file) {
             std::copy(std::istream_iterator<float>(line_),
                       std::istream_iterator<float>(),
                       std::back_inserter(v));
+//            if(abs(v[1]-250.) < E){
+//                std::cout << v[0] << " " << v[1] << "\n";
+//            }
             obstacles.emplace_back(std::make_tuple(v[0], v[1]));
         }
         obs_file.close();
@@ -32,6 +35,10 @@ void Canvas::add_obs_from_file(std::string path_to_file) {
 bool Canvas::is_colliding2(std::tuple<float, float> node) {
     for(auto obs: obstacles){
         if (Utils::eul_dist(node, obs) < clearance){
+            std::ofstream myfile;
+            myfile.open("false_nodes.txt", std::ios_base::app);
+            myfile << std::get<0>(obs) << " " << std::get<1>(obs) << "\n";
+            myfile.close();
             return true;
         }
     }
@@ -45,6 +52,9 @@ bool Canvas::is_colliding(std::tuple<float, float> node) {
 void Canvas::init_obs_tree(point topLeft, point botRight, std::vector<std::tuple<float, float>> obs_array) {
     obs_tree = new Quadtree(topLeft, botRight);
     for (auto obs: obs_array) {
+//        if (std::get<1>(obs)==250){
+////            std::cout << "Found" << std::endl;
+//        }
         obs_tree->insert(std::make_pair(std::get<0>(obs), std::get<1>(obs)));
     }
 }
