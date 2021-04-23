@@ -22,9 +22,14 @@ Tree::Tree(Canvas *canvas_, Node start_, Node end_, float step_size_, int id_) {
 
 bool Tree::add_node(Node parent, Node node, bool collided) {
 //    if(canvas->is_colliding(node) != collided){
-//        std::cout << node.first << " " << node.second << " " << collided << "Parallel collision differs\n";
+////        std::cout << node.first << " " << node.second << " " << collided << "Parallel collision differs\n";
 //    }
-    if (!collided && Utils::eul_dist(parent, node) > STEP_SIZE/1.1){
+//    if (!collided && Utils::eul_dist(parent, node) > STEP_SIZE/1.1){
+//        nodes.push_back(node);
+//        parent_map[node] = parent;
+//        return true;
+//    }
+    if (!canvas->is_colliding(node) && Utils::eul_dist(parent, node) > STEP_SIZE/1.1){
         nodes.push_back(node);
         parent_map[node] = parent;
         return true;

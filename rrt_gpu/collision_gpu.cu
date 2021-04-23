@@ -26,7 +26,7 @@ __global__ void collision(Node node, Node* obstacles, bool* col, int obs_size){
 }
 
 void is_colliding_gpu(Node node, Node* obstacles, bool* col, int obs_size) {
-//    std::cout << "Size: " <<obs_size <<"\n";
+//    std::cout << "Size: " <<obs_size <<"\n";/
     collision<<<(obs_size-1)/1024+1, 1024>>>(node, obstacles, col, obs_size);
     gpuErrchk( cudaPeekAtLastError() );
     gpuErrchk( cudaDeviceSynchronize() );

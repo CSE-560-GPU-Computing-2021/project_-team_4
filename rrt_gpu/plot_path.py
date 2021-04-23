@@ -3,7 +3,7 @@ import matplotlib.patches as patches
 
 plt.axis('equal')
 
-map_file = "map1.txt"
+map_file = "map2.txt"
 f = open(map_file)
 line = f.readline()
 line_ctr = 0
@@ -48,7 +48,7 @@ plt.pause(1)
 # line = f.readline()
 # while line:
 #     line = list(map(float, line.split(" ")))
-#     X1 = [line[0], line[1]]
+#     X1 = [line[0], line[1]]t. If you are affected by Covid (directly or due to a family member's infection) and need an extension beyond that, please
 #     X2 = [line[2], line[1]]
 #     X3 = [line[2], line[3]]
 #     X4 = [line[0], line[3]]
